@@ -20,10 +20,10 @@
   --text-3:        #7c7c88;
 
   /* Marka */
-  --orange:        #f05a1e;
+  --orange:        #f1592a;
   --orange-2:      #ff8a3d;
-  --orange-soft:   rgba(240, 90, 30, .14);
-  --orange-line:   rgba(240, 90, 30, .35);
+  --orange-soft:   rgba(241, 89, 42, .14);
+  --orange-line:   rgba(241, 89, 42, .35);
 
   /* Durum */
   --green:         #b6f24a;
@@ -65,7 +65,7 @@
   --text-2:        #55555f;
   --text-3:        #86868f;
 
-  --orange-soft:   rgba(240, 90, 30, .1);
+  --orange-soft:   rgba(241, 89, 42, .1);
   --green:         #74a800;
   --shadow: 0 18px 40px rgba(0, 0, 0, .1);
   --shadow-sm: 0 6px 18px rgba(0, 0, 0, .07);
@@ -124,6 +124,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: rgba(255, 255, 255, .09);
   line-height: .8;
   pointer-events: none;
+  /* Marka işaretiyle aynı italik eğim */
+  transform: skewX(-13deg);
 }
 .auth__quote { position: relative; z-index: 2; max-width: 480px; }
 .auth__quote h2 { font-size: 40px; font-weight: 700; line-height: 1.1; color: #fff; letter-spacing: -.02em; }
@@ -212,7 +214,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: .18s ease;
 }
 .rail__btn:hover { background: var(--surface-2); color: var(--text); }
-.rail__btn.is-active { background: var(--orange); color: #fff; box-shadow: 0 8px 20px rgba(240, 90, 30, .35); }
+.rail__btn.is-active { background: var(--orange); color: #fff; box-shadow: 0 8px 20px rgba(241, 89, 42, .35); }
 .rail__spacer { flex: 1; }
 
 .main { flex: 1; min-width: 0; padding: 22px 26px 40px; }
@@ -311,7 +313,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: linear-gradient(150deg, var(--orange) 0%, #d8480f 100%);
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 20px 44px rgba(240, 90, 30, .3);
+  box-shadow: 0 20px 44px rgba(241, 89, 42, .3);
 }
 .card--accent .card__title, .card--accent .muted { color: rgba(255,255,255,.85); }
 .card__head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }

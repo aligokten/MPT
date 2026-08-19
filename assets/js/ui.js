@@ -56,15 +56,23 @@ export function icon(name, size = 18, cls = "") {
     aria-hidden="true">${d}</svg>`;
 }
 
-export const logoMark = (size = 30) => `
-<svg width="${size}" height="${size}" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-  <rect width="40" height="40" rx="12" fill="url(#mptg)"/>
-  <path d="M11 27V13l6 8 6-8v14" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M27 13h2.5a3.5 3.5 0 0 1 0 7H27v7" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <defs><linearGradient id="mptg" x1="0" y1="0" x2="40" y2="40">
-    <stop stop-color="#ff8a3d"/><stop offset="1" stop-color="#e8490f"/>
-  </linearGradient></defs>
+/** MPT marka işareti — siyah disk üzerinde turuncu italik "MPT" harfleri.
+    `disc: false` ile yalnızca kelime işareti (harfler) döner. */
+export function logoMark(size = 30, { disc = true } = {}) {
+  return `
+<svg width="${size}" height="${size}" viewBox="0 0 256 256" fill="none" role="img" aria-label="MPT">
+  ${disc ? `<circle cx="128" cy="128" r="128" fill="#0a0a0a"/>
+  <circle cx="128" cy="128" r="127" fill="none" stroke="currentColor" stroke-opacity=".12"/>` : ""}
+  <g transform="translate(30 90) scale(0.80)" fill="#f1592a">
+    <g transform="skewX(-13)">
+      <path d="M0,102 V0 H27 L46,50 L65,0 H92 V102 H67 V47 L53,84 H39 L25,47 V102 Z"/>
+      <path transform="translate(97 0)" fill-rule="evenodd"
+        d="M0,0 H54 C82,0 82,60 54,60 H27 V102 H0 Z M27,20 H50 C63,20 63,40 50,40 H27 Z"/>
+      <path transform="translate(180 0)" d="M0,0 H88 V25 H56 V102 H29 V25 H0 Z"/>
+    </g>
+  </g>
 </svg>`;
+}
 
 /* ============================================================
    GRAFİKLER (bağımlılıksız inline SVG)
@@ -104,7 +112,7 @@ export function barChart(data, opts = {}) {
 
 /** Alan + çizgi grafiği — ağırlık/kalori trendi */
 export function lineChart(points, opts = {}) {
-  const { height = 190, stroke = "#f05a1e", fill = "rgba(240,90,30,.18)", labels = true, dots = true } = opts;
+  const { height = 190, stroke = "#f1592a", fill = "rgba(240,90,30,.18)", labels = true, dots = true } = opts;
   if (!points.length) return `<div class="empty">Veri yok</div>`;
   const vals = points.map((p) => p.value);
   const min = Math.min(...vals), max = Math.max(...vals);
@@ -152,7 +160,7 @@ export function lineChart(points, opts = {}) {
 
 /** Halka (donut) — adım/hedef göstergesi */
 export function ring(pct, opts = {}) {
-  const { size = 132, label = "", value = "", stroke = 11, color = "#f05a1e", track = "rgba(255,255,255,.09)", second = null } = opts;
+  const { size = 132, label = "", value = "", stroke = 11, color = "#f1592a", track = "rgba(255,255,255,.09)", second = null } = opts;
   const r = (size - stroke) / 2;
   const c = 2 * Math.PI * r;
   const p = Math.max(0, Math.min(100, pct));
@@ -174,7 +182,7 @@ export function ring(pct, opts = {}) {
 
 /** Yarım gösterge — stres/BMI benzeri ölçek */
 export function gauge(pct, opts = {}) {
-  const { size = 150, value = "", label = "", color = "#f05a1e" } = opts;
+  const { size = 150, value = "", label = "", color = "#f1592a" } = opts;
   const r = size / 2 - 12;
   const cx = size / 2, cy = size / 2 + 4;
   const c = Math.PI * r;

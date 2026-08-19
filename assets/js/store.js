@@ -191,7 +191,7 @@ function seed() {
 
   /* --- Etkinlikler --- */
   const events = [
-    { id: uid("ev"), title: "Sabah Koşusu — Sahil Parkuru", date: addDays(t, 3),  time: "07:00", place: "Milas Sahil", capacity: 30, desc: "8 km tempolu koşu, ardından esneme ve kahvaltı.", attendees: ["u_mert"], cover: "#f05a1e" },
+    { id: uid("ev"), title: "Sabah Koşusu — Sahil Parkuru", date: addDays(t, 3),  time: "07:00", place: "Milas Sahil", capacity: 30, desc: "8 km tempolu koşu, ardından esneme ve kahvaltı.", attendees: ["u_mert"], cover: "#f1592a" },
     { id: uid("ev"), title: "Vücut Analizi Günü (InBody)", date: addDays(t, 6),  time: "10:00", place: "MPT Stüdyo A", capacity: 40, desc: "Ücretsiz vücut kompozisyon ölçümü ve birebir değerlendirme.", attendees: ["u_ayse", "u_zeynep"], cover: "#b6f24a" },
     { id: uid("ev"), title: "Fonksiyonel Antrenman Workshop", date: addDays(t, 12), time: "18:30", place: "Fonksiyonel Alan", capacity: 20, desc: "Kettlebell ve TRX teknikleri üzerine 2 saatlik atölye.", attendees: [], cover: "#5aa9ff" },
     { id: uid("ev"), title: "Beslenme Semineri: Kış Dönemi", date: addDays(t, 19), time: "20:00", place: "Toplantı Salonu", capacity: 50, desc: "Diyetisyen Selin Ak ile mevsimsel beslenme planlaması.", attendees: ["u_ayse"], cover: "#ffc555" },

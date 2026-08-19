@@ -833,7 +833,7 @@ export function eventsAdmin(ctx) {
             time: m.querySelector("#e-time").value, place: m.querySelector("#e-place").value,
             capacity: +m.querySelector("#e-cap").value || 20,
             desc: m.querySelector("#e-desc").value, attendees: [],
-            cover: ["#f05a1e", "#b6f24a", "#5aa9ff", "#ffc555"][d.events.length % 4],
+            cover: ["#f1592a", "#b6f24a", "#5aa9ff", "#ffc555"][d.events.length % 4],
           });
           d.notifications.push({
             id: S.newId("nt"), memberId: "all", from: ctx.user.id,

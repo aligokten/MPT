@@ -84,11 +84,11 @@ export function home(ctx) {
       <div class="card__head"><span class="card__title">${icon("target")} Haftalık Hedef</span>
         <a class="icon-btn" href="#/workouts">${icon("arrow", 15)}</a></div>
       <div class="row" style="justify-content:center">
-        ${ring((doneThisWeek / goalPerWeek) * 100, { value: `${doneThisWeek}/${goalPerWeek}`, label: "Seans", color: "#f05a1e",
+        ${ring((doneThisWeek / goalPerWeek) * 100, { value: `${doneThisWeek}/${goalPerWeek}`, label: "Seans", color: "#f1592a",
           second: { pct: (totalMin / 240) * 100, color: "#b6f24a" }, track: "var(--surface-3)" })}
       </div>
       <div class="legend mt-4" style="justify-content:center">
-        <span><i style="background:#f05a1e"></i>Seans</span>
+        <span><i style="background:#f1592a"></i>Seans</span>
         <span><i style="background:#b6f24a"></i>Süre</span>
       </div>
       <div class="list mt-4" style="border-top:1px solid var(--line-soft);padding-top:6px">
@@ -105,7 +105,7 @@ export function home(ctx) {
         <span class="badge badge--orange">Son 7 gün</span>
       </div>
       ${lineChart(week.map((d) => ({ label: d.label, value: Math.round(d.volume / 100) / 10 })),
-        { height: 214, stroke: "#f05a1e" })}
+        { height: 214, stroke: "#f1592a" })}
       <div class="row row--between mt-3 small muted">
         <span>Toplam kaldırılan: <b style="color:var(--text)">${(totalVolume / 1000).toFixed(1)} ton</b></span>
         <span>Ortalama RPE: <b style="color:var(--text)">${(S.workoutsOf(id).slice(0, 5).reduce((s, w) => s + (w.rpe || 7), 0) / Math.max(1, Math.min(5, S.workoutsOf(id).length))).toFixed(1)}</b></span>
@@ -153,13 +153,13 @@ export function home(ctx) {
           <div class="small muted">Hedef ${S.DAILY_TARGET.kcal} kcal · kalan ${Math.max(0, S.DAILY_TARGET.kcal - tot.kcal)}</div>
         </div>
         <div style="flex:1;min-width:220px">
-          ${macroRow("Protein", tot.protein, S.DAILY_TARGET.protein, "#f05a1e")}
+          ${macroRow("Protein", tot.protein, S.DAILY_TARGET.protein, "#f1592a")}
           ${macroRow("Karbonhidrat", tot.carb, S.DAILY_TARGET.carb, "#ffc555")}
           ${macroRow("Yağ", tot.fat, S.DAILY_TARGET.fat, "#5aa9ff")}
         </div>
       </div>
       <div class="mt-4">${stackBar([
-        { label: "Protein", value: tot.protein * 4, color: "#f05a1e" },
+        { label: "Protein", value: tot.protein * 4, color: "#f1592a" },
         { label: "Karbonhidrat", value: tot.carb * 4, color: "#ffc555" },
         { label: "Yağ", value: tot.fat * 9, color: "#5aa9ff" },
       ])}</div>
@@ -465,16 +465,16 @@ export function nutrition(ctx) {
 
     <div class="card c4">
       <div class="card__head"><span class="card__title">${icon("target")} Makro Dağılımı</span></div>
-      ${macroRow("Protein", tot.protein, T.protein, "#f05a1e")}
+      ${macroRow("Protein", tot.protein, T.protein, "#f1592a")}
       ${macroRow("Karbonhidrat", tot.carb, T.carb, "#ffc555")}
       ${macroRow("Yağ", tot.fat, T.fat, "#5aa9ff")}
       <div class="mt-4">${stackBar([
-        { label: "P", value: tot.protein * 4, color: "#f05a1e" },
+        { label: "P", value: tot.protein * 4, color: "#f1592a" },
         { label: "K", value: tot.carb * 4, color: "#ffc555" },
         { label: "Y", value: tot.fat * 9, color: "#5aa9ff" },
       ])}</div>
       <div class="legend mt-3">
-        <span><i style="background:#f05a1e"></i>Protein</span>
+        <span><i style="background:#f1592a"></i>Protein</span>
         <span><i style="background:#ffc555"></i>Karbonhidrat</span>
         <span><i style="background:#5aa9ff"></i>Yağ</span>
       </div>
@@ -587,7 +587,7 @@ export function progress(ctx) {
   const prof = S.memberProfile(id);
   const metric = ctx.query.m || "weight";
   const METRICS = [
-    { k: "weight", n: "Kilo", u: "kg", c: "#f05a1e" },
+    { k: "weight", n: "Kilo", u: "kg", c: "#f1592a" },
     { k: "fat", n: "Yağ Oranı", u: "%", c: "#ffc555" },
     { k: "muscle", n: "Kas Oranı", u: "%", c: "#b6f24a" },
     { k: "waist", n: "Bel", u: "cm", c: "#5aa9ff" },
