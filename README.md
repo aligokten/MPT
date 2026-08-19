@@ -4,6 +4,16 @@ Milas Personal Training spor salonu için hazırlanmış, üye ve antrenör giri
 Referans tasarımdaki koyu zemin + turuncu vurgu paletine ve kart/pill menü diline sadık kalınarak
 sıfırdan geliştirildi. Kurulum gerektirmez: `index.html` dosyasını tarayıcıda açmak yeterlidir.
 
+## Yayın
+
+Site: **https://aligokten.github.io/MPT/**
+
+`.github/workflows/deploy-pages.yml`, main dalına gelen her push'ta depo içeriğini
+`gh-pages` dalına yayınlar. İlk kullanımda GitHub Pages'in bir kez açılması gerekir:
+**Settings → Pages → Source: "Deploy from a branch" → `gh-pages` / `(root)` → Save.**
+(Bu adım depo ayarı olduğu için iş akışı token'ıyla yapılamıyor; sonrasında yayın
+tamamen otomatik ilerler.)
+
 ## Demo hesapları
 
 | Rol | E-posta | Şifre |
