@@ -1,0 +1,38 @@
+name: GitHub Pages yayını
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Aynı anda tek yayın çalışsın; sıradaki çalışma devam edeni iptal etmesin
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Depo ayarlarında Pages kapalıysa açar ve kaynağı "GitHub Actions" yapar
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      # Statik site: depo kökü olduğu gibi yayınlanır
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
